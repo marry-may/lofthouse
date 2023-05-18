@@ -1,0 +1,46 @@
+.benefits {
+    padding: 8rem 0;
+    display: block;
+
+    &__row {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        row-gap: 3rem;
+
+        //or container small
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        width: 200px;
+        text-align: center;
+
+        &-img {
+            height: 80px;
+        }
+
+        &-text {
+            margin-top: 3rem;
+        }
+    }
+
+    @include mediaTablet {
+        padding: 6rem 0;
+    }
+
+    @include mediaMobile {
+        padding: 5rem 0;
+    }
+}
+
+//deco
+.benefits {
+    .deco {
+        &::after {
+            content: "II";
+            top: -2rem;
+        }
+    }
+}

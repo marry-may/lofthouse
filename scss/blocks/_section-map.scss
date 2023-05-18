@@ -1,0 +1,33 @@
+.section-map {
+    padding: 10rem 0;
+
+    @include mediaTablet {
+        padding: 4rem 0;
+    }
+}
+
+.section-map__title {
+    margin-bottom: 5rem;
+
+    @include mediaTablet {
+        margin-bottom: 3rem;
+    }
+}
+
+.section-map__map {
+    background-color: $color-footer-bg;
+}
+
+.map {
+    height: 358px;
+}
+
+//deco
+.section-map {
+    .deco {
+        &::after {
+            content: "V";
+            margin-top: 2rem;
+        }
+    }
+}

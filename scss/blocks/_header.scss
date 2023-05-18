@@ -1,0 +1,121 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-top: 30px;
+    padding-bottom: 74px;
+
+    min-height: 680px;
+    height: 100vh;
+    background: linear-gradient(
+            180deg,
+            #242b33 11.98%,
+            rgba(45, 52, 60, 0.38) 51.04%,
+            #242b33 92.19%
+        ),
+        url("./../images/header/heder-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header__top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mediaTablet {
+        flex-direction: row;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 0.5rem 1rem 2rem;
+        width: 100%;
+        background: linear-gradient(
+            180deg,
+            $color-dark 0%,
+            rgba($color-dark, 0.7) 70%,
+            rgba($color-dark, 0) 100%
+        );
+        z-index: 999;
+    }
+}
+
+.header__top-row.header__top-row--active {
+    background: $color-dark;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+    gap: 5rem;
+
+    .header__nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header__nav-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+.header__nav {
+    @include mediaTablet {
+        display: none;
+    }
+}
+
+.header__nav-btn {
+    display: none;
+
+    @include mediaTablet {
+        display: block;
+    }
+}
+
+.header__content {
+    display: flex;
+    justify-content: center;
+}
+
+.header__title {
+    font-family: $font-accent;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.33;
+    text-align: center;
+    color: $color-accent;
+
+    @include mediaTablet {
+        font-size: 40px;
+    }
+
+    @include mediaMobile {
+        font-size: 32px;
+    }
+}
+
+.header__footer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 98%;
+    margin: 0 auto;
+
+    @include mediaTablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
+}

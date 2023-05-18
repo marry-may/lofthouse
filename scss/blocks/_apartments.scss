@@ -1,0 +1,28 @@
+.apartments {
+    &__cards {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(290px, 1fr));
+        gap: 1.5rem;
+
+        @include mediaTablet {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            align-items: stretch;
+            margin-top: 3rem;
+            gap: 1.5rem;
+        }
+
+        @include mediaMobile {
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        }
+    }
+}
+
+//deco
+.apartments {
+    .deco {
+        &::after {
+            content: "III";
+        }
+    }
+}

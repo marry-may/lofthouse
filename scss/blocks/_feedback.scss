@@ -1,0 +1,25 @@
+.feedback {
+    padding-bottom: 10rem;
+
+    @include mediaTablet {
+        text-align: center;
+    }
+}
+
+.feedback__title {
+    margin-bottom: 2rem;
+}
+
+.feedback__form {
+    display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+
+    @include mediaTablet {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}

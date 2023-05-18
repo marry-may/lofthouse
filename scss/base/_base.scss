@@ -1,0 +1,131 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&display=swap");
+
+// Base
+
+* {
+    font-feature-settings: "pnum" on, "lnum" on;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $color-bg;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $color-text;
+}
+
+a {
+    color: $color-text;
+    transition: color 0.2s ease-in;
+
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+.container {
+    width: 1140px;
+    max-width: 98%; //mc
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+// strange snippet ?
+.visualy-hidden {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+
+    // remove visible trace (bg color)
+    clip: rect(1px 1px 1px 1px);
+    clip-path: inset(50%);
+
+    // for screen reader
+    white-space: nowrap;
+}
+
+.hidden {
+    display: none !important;
+}
+
+//choose the correct option & delete duplicated class
+.title-2 {
+    font-family: $font-accent;
+    font-size: 36px;
+    font-weight: 700;
+    color: $color-accent;
+
+    @include mediaTablet {
+        font-size: 32px;
+    }
+
+    @include mediaMobile {
+        font-size: 28px;
+    }
+}
+
+a.link-bold,
+.link-bold {
+    color: $color-accent;
+    font-weight: 700;
+}
+
+// COMMON
+.deco {
+    position: relative;
+    // max-width: 98%;
+    overflow: visible;
+
+    &::after {
+        content: "";
+        display: block;
+        height: inherit;
+        width: 400px;
+        text-align: center;
+        font-family: $font-accent;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 400px;
+        line-height: 0.8;
+        text-align: center;
+        color: $color-white;
+        opacity: 0.02;
+        position: absolute;
+        top: 5%;
+        z-index: -1;
+    }
+
+    &--left {
+        &::after {
+            right: auto;
+            left: -200px; //-19%;
+        }
+    }
+
+    &--right {
+        &::after {
+            left: auto;
+            right: -200px; // -19%;
+        }
+    }
+}
+
+.scroll-next {
+    display: block;
+    text-align: center;
+    margin: 80px auto 0;
+}
+
+//bugfix
+.header,
+.footer,
+.main {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.no-scroll {
+    overflow: hidden;
+}

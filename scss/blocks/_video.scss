@@ -1,0 +1,70 @@
+.video__link {
+    display: block;
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+
+    &::before {
+        content: "";
+        background: $color-bg;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+        transition: opacity 0.2s ease-in;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 0.7;
+        }
+    }
+
+    @include mediaTablet {
+        max-height: 400px;
+    }
+}
+
+.video__icon {
+    height: 6rem;
+    width: 6rem;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    transition: all 0.2s ease-in;
+
+    @include mediaTablet {
+        height: 4rem;
+        width: 4rem;
+    }
+}
+
+.video__link:hover .video__icon {
+    transform: scale(1.2);
+    filter: saturate(1.4);
+}
+
+.video__img {
+    width: 100%;
+}
+
+.video {
+    @include mediaTablet {
+        overflow: hidden;
+    }
+
+    //deco
+    .deco {
+        &::after {
+            content: "IV";
+            top: 20%;
+        }
+    }
+}
